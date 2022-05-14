@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
+using System.Text;
+
 public class ReadConfig : MonoBehaviour
 {
     public Text appPath;
@@ -18,22 +20,22 @@ public class ReadConfig : MonoBehaviour
     {
         
     }
-
+    /// <summary>
+    /// 根据配置来关闭程序
+    /// </summary>
+    /// <returns></returns>
     IEnumerator ReadConfigConrotine() 
     {
         while (true)
         {
-            
-            using (StreamReader sr = new StreamReader(Application.dataPath+"/ApplicationQuit.config"))
-            {
-                string line= sr.ReadLine();
-                if (line == "isStartQuit:1")
-                {
-                    Application.Quit();
-                }
-            }
             yield return new WaitForSeconds(1f);
+            Debug.Log("do quit Application");
+            var content = File.ReadAllText(Application.dataPath + "/QuitApplication.config");
+            if (content == "QuitApplication")
+            {
+                File.WriteAllText(Application.dataPath + "/QuitApplication.config", "");
+                Application.Quit();
+            }
         }
-       
     }
 }

@@ -82,7 +82,7 @@ public class WindowMaxAndMin : MonoBehaviour
 
     public void OnClickRestore()
     {
-        //还原
+        //还原 mo
         ShowWindow(GetForegroundWindow(), SW_SHOWRESTORE);
     }
 

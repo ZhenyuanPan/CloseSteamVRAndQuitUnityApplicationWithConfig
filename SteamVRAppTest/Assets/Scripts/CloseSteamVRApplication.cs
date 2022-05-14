@@ -34,6 +34,7 @@ public class CloseSteamVRApplication : MonoBehaviour
     {
         List<Process> allProcesses = Process.GetProcesses().ToList();
         CloseVRProcessFunc(allProcesses);
+
     }
    
    
