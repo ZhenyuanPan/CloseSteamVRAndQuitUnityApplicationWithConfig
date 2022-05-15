@@ -31,7 +31,7 @@ public class ReadConfig : MonoBehaviour
             yield return new WaitForSeconds(1f);
             Debug.Log("do quit Application");
             var content = File.ReadAllText(Application.dataPath + "/QuitApplication.config");
-            if (content == "QuitApplication")
+            if (content.Contains("QuitApplication"))
             {
                 File.WriteAllText(Application.dataPath + "/QuitApplication.config", "");
                 Application.Quit();

@@ -101,7 +101,7 @@ public class WindowMaxAndMin : MonoBehaviour
     IEnumerator Setposition()
     {
         yield return new WaitForSeconds(0.1f);		//不知道为什么发布于行后，设置位置的不会生效，我延迟0.1秒就可以
-        SetWindowPos(GetForegroundWindow(), -1, 0, 0, 0, 0, 1 | 2);       //设置屏幕大小和位置
+        //SetWindowPos(GetForegroundWindow(), -1, 0, 0, 0, 0, 1 | 2);       //设置屏幕大小和位置
     }
     float addTime = 0;
     void Update()
